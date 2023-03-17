@@ -5,74 +5,93 @@ import { FontAwesome } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
-import { BugetCard } from './src/styles/styles';
-
-
-
-
+import { BugetCard, ContentBudget, ContentValue, Divisor, JustTitleValue, TitleValue, ViewRigthIcon } from './src/styles/BudgetCard';
+import { Value } from './src/styles/Texts';
+import { ThemeProvider } from 'styled-components';
+import  Theme  from './src/styles/Theme';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <StatusBar color='white' />
-      <View style={styles.menu}>
-        <View  style={styles.clientcontent}>
-        <Text style={styles.subtitle}>
-            Olá
-          </Text>
-          <Text  style={styles.client}>
-            {client.name}
-          </Text>
-        </View>
-        <FontAwesome name="user-circle-o"  style={styles.usericon}/>
-      </View>
-
-
-      <BugetCard>
-          <View style={styles.contentvalue}>
-            <View styles={styles.justtitilevalue}>
-              <View style={styles.titlevalue}>
-              <MaterialIcons name="attach-money" style={styles.valueicon}/>
-              <Text> Saldo Liberado</Text>
-              </View>
-              <Text style={styles.value}>R$ {client.value}</Text>
-            </View>
-            <View style={styles.righticon}>
-              <AntDesign name="right" style={styles.righticon} />
-            </View>
-          </View>
-
-          <View>
-            <Text>
-              Saldo a
+    <ThemeProvider theme={Theme}>
+      <View style={styles.container}>
+        <StatusBar color='white' />
+        <View style={styles.menu}>
+          <View  style={styles.clientcontent}>
+          <Text style={styles.subtitle}>
+              Olá
+            </Text>
+            <Text  style={styles.client}>
+              {client.name}
             </Text>
           </View>
-        </BugetCard>
-
-
-      <View style={styles.contentcard}>
-        <View style={styles.minicard}>
-          <Text >
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, ad.{' '}
-          </Text>
+          <FontAwesome name="user-circle-o"  style={styles.usericon}/>
         </View>
-        <View style={styles.minicard}>
-          <Text >
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi, ad.{' '}
-          </Text>
+
+        <BugetCard>
+            <ContentValue>
+              <JustTitleValue>
+                <TitleValue>
+                <MaterialIcons name="attach-money" style={styles.valueicon}/>
+                <Text> Saldo Liberado</Text>
+                </TitleValue>
+                <Value>R$ {client.value}</Value>
+              </JustTitleValue>
+              <ViewRigthIcon>
+                <AntDesign name="right" style={{color: Theme.color.main}} />
+              </ViewRigthIcon>
+            </ContentValue>
+            <Divisor/>
+            <ContentBudget>
+            <Text  style={{color: Theme.color.main}} >
+                Saldo a liberar:
+              </Text>
+              <Text>
+                {client.budget}
+              </Text>
+            </ContentBudget>
+          </BugetCard>
+
+          <View>
+
+
+
+
+          </View>
+
+
+        <View style={styles.contentcard}>
+          <View style={styles.minicard}>
+             <ContentValue>
+              <Text >
+                Mais produtos
+              </Text>
+              <AntDesign name="right" style={{color: Theme.color.main}} />
+
+             </ContentValue>
+          </View>
+          <View style={styles.minicard}>
+          <ContentValue>
+              <Text >
+                Mais produtos
+              </Text>
+              <AntDesign name="right" style={{color: Theme.color.main}} />
+
+             </ContentValue>
+
+          </View>
+        </View>
+
+        <View style={styles.footer}>
+        <Entypo name="home" style={styles.footericon} />
+        <View style={styles.supgambiicon}> 
+          <View style={styles.gambiicon}>
+            <MaterialIcons name="attach-money" style={styles.budgeticon}/>
+            </View>      
+        </View>
+        <MaterialIcons name="speaker-notes" style={styles.footericon} />
         </View>
       </View>
-
-      <View style={styles.footer}>
-      <Entypo name="home" style={styles.footericon} />
-      <View style={styles.supgambiicon}> 
-        <View style={styles.gambiicon}>
-          <MaterialIcons name="attach-money" style={styles.budgeticon}/>
-          </View>      
-      </View>
-      <MaterialIcons name="speaker-notes" style={styles.footericon} />
-      </View>
-    </View>
+    </ThemeProvider>
   );
 }
 
@@ -119,52 +138,12 @@ const styles = StyleSheet.create({
 
 
   
-// Budget Card  
-
-  budgetcard: {
-    display: 'flex',
-    flexDirection:'column',
-    width:'80%',
-    backgroundColor: '#ffffff',
-    // padding: '10%',
-    borderRadius: '10px',
-    margin: '5%',
-    justifyContent: 'space-between',
-  },
-  contentvalue:{
-    display: 'flex',
-    flexDirection: 'row',
-    width: '100%',
-  },
-  justtitilevalue: {
-    justifyContent:'center',
-  },
-  titlevalue: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
+// Budget Card
   valueicon:{
     color: '#C60000',
-    fontSize: '50px',
+    fontSize: '30px',
     textAlign:' center',
     marginLeft: '3%',
-  },
-  righticon: {
-    color: '#c60000',
-    size: 20,
-    alignItems: 'center',
-    justifyContent:'center'
-  },
-  value: {
-    fontSize: '30px', 
-    textAlign: 'center',
-  },
-  shadowProp: {  
-    shadowOffset: {width: 0, height: 4},  
-    shadowColor: '#0000',  
-    shadowOpacity: 0.2,  
-    shadowRadius: 2,  
   },
 
 
@@ -178,6 +157,7 @@ const styles = StyleSheet.create({
     marginTop: '0%',
     borderWidth: '1px',
     borderColor: '#C60000',
+    width: '100%',
   },
 
 // Footer
@@ -187,7 +167,7 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     backgroundColor: '#C60000',
     width: '100%',
-    height: '10%', 
+    height: '8%', 
     alignItems: 'center',
     justifyContent: 'space-between',
     },
