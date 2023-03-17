@@ -5,7 +5,6 @@ import { FontAwesome } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
-import { Card } from './src/styles/Cards';
 import { BugetCard } from './src/styles/styles';
 
 
