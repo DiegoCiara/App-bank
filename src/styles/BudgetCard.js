@@ -4,8 +4,7 @@ import styled from "styled-components/native";
 export const BugetCard = styled.View`
   display: flex;
   flex-direction: column;
-  width:80%;
-  height: 20%;
+  height: 130px;
   background-color: #ffffff;
   border-radius: 10px;
   padding: 2%;
@@ -18,7 +17,6 @@ export const ContentValue = styled.View`
   display: flex;
   flex-direction: row;
   max-width: 90%;
-  width: 100%;
   justify-content: space-between;
 `;
 export const JustTitleValue = styled.View`
@@ -38,7 +36,6 @@ export const  ViewRigthIcon = styled.View`
 
 export const Divisor = styled.View`
   height: 1px;
-  width: 100%;
   background-color: #b8b8b8;
   margin: 0%;
   padding: 0%;

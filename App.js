@@ -1,14 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
 import { client } from './labels';
 import { FontAwesome } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import { BugetCard, ContentBudget, ContentValue, Divisor, JustTitleValue, TitleValue, ViewRigthIcon } from './src/styles/BudgetCard';
-import { Value } from './src/styles/Texts';
+import { MicroText, Value } from './src/styles/Texts';
 import { ThemeProvider } from 'styled-components';
 import  Theme  from './src/styles/Theme';
+import { ImageCard } from './src/styles/CardImage';
+import { ContentMicroCard, MicroCard, Minicard, ViewMicroCards } from './src/styles/MiniCards';
 
 export default function App() {
   return (
@@ -27,7 +29,9 @@ export default function App() {
           <FontAwesome name="user-circle-o"  style={styles.usericon}/>
         </View>
 
-        <BugetCard>
+
+      <ScrollView style={styles.scrum} showsVerticalScrollIndicator={false}>
+          <BugetCard>
             <ContentValue>
               <JustTitleValue>
                 <TitleValue>
@@ -49,37 +53,60 @@ export default function App() {
                 {client.budget}
               </Text>
             </ContentBudget>
-          </BugetCard>
+        </BugetCard>
 
-          <View>
+        <ViewMicroCards>
+        <ContentMicroCard>
+            <MicroCard>
+              <MaterialIcons name="attach-money" style={styles.valueicon}/>
+            </MicroCard>
+            <MicroText>
+              Contratos
+            </MicroText>
+          </ContentMicroCard>
+          <ContentMicroCard>
+            <MicroCard>
+              <MaterialIcons name="attach-money" style={styles.valueicon}/>
+            </MicroCard>
+            <MicroText>
+              Valores
+            </MicroText>
+          </ContentMicroCard>
+          <ContentMicroCard>
+            <MicroCard>
+              <MaterialIcons name="attach-money" style={styles.valueicon}/>
+            </MicroCard>
+            <MicroText>
+              Transferir
+            </MicroText>
+          </ContentMicroCard>
+          <ContentMicroCard>
+            <MicroCard>
+              <MaterialIcons name="attach-money" style={styles.valueicon}/>
+            </MicroCard>
+            <MicroText>
+              Solicitar
+            </MicroText>
+          </ContentMicroCard>
+        </ViewMicroCards>
 
-
-
-
-          </View>
-
-
-        <View style={styles.contentcard}>
-          <View style={styles.minicard}>
-             <ContentValue>
+          <ImageCard  source={require('./imagecard.png')}/>
+          <Minicard>
               <Text >
                 Mais produtos
               </Text>
               <AntDesign name="right" style={{color: Theme.color.main}} />
-
-             </ContentValue>
-          </View>
-          <View style={styles.minicard}>
-          <ContentValue>
+          </Minicard>
+          <Minicard>
               <Text >
                 Mais produtos
               </Text>
               <AntDesign name="right" style={{color: Theme.color.main}} />
+          </Minicard>
 
-             </ContentValue>
 
-          </View>
-        </View>
+      </ScrollView>
+
 
         <View style={styles.footer}>
         <Entypo name="home" style={styles.footericon} />
@@ -96,6 +123,17 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+
+
+  scrum: {
+    maxWidth: '85%',
+
+  },
+
+
+
+
+
   statusbar:{
     color: '#ffffff',
   },
@@ -113,7 +151,7 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     backgroundColor: '#C60000',
     width: '100%',
-    height: '15%', 
+    height: '14%', 
     justifyContent: 'space-between',
   },
   clientcontent: {

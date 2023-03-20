@@ -7,3 +7,10 @@ font-weight: 700;
 margin: 6%;
 `;
 
+export const MicroText = styled.Text`
+  font-size: 12px;
+  font-weight: 600;
+  color: #c60000;
+  margin: 5%;
+`;
+
