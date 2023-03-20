@@ -4,7 +4,7 @@ import styled from "styled-components/native";
 export const BugetCard = styled.View`
   display: flex;
   flex-direction: column;
-  height: 18%;
+  height: 15%;
   background-color: #ffffff;
   border-radius: 10px;
   padding: 2%;
