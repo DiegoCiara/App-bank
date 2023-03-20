@@ -85,7 +85,7 @@ export default function App() {
               <MaterialIcons name="attach-money" style={styles.valueicon}/>
             </MicroCard>
             <MicroText>
-              Solicitar
+              Contratos
             </MicroText>
           </ContentMicroCard>
         </ViewMicroCards>
@@ -126,8 +126,8 @@ const styles = StyleSheet.create({
 
 
   scrum: {
-    maxWidth: '85%',
-
+    maxWidth: '100%',
+    padding: '5%',
   },
 
 
