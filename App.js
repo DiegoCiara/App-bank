@@ -81,7 +81,7 @@ export default function App() {
             </ContentMicroCard>
             <ContentMicroCard>
               <MicroCard>
-                <MaterialCommunityIcons name="bank-transfer" style={styles.valueicon} /> 
+                <MaterialCommunityIcons name="bank-transfer" style={styles.valueicon3} /> 
               </MicroCard>
               <MicroText>
                 Transferir
@@ -132,7 +132,7 @@ export default function App() {
             </ContentMicroCard>
             <ContentMicroCard>
               <MicroCard>
-                <MaterialCommunityIcons name="bank-transfer" style={styles.valueicon} /> 
+                <MaterialCommunityIcons name="bank-transfer" style={styles.valueicon3} /> 
               </MicroCard>
               <MicroText>
                 Transferir
@@ -221,6 +221,12 @@ valueicon:{
 valueicon2:{
   color: '#C60000',
   fontSize: '22px',
+  textAlign:' center',
+  marginLeft: '3%',
+},
+valueicon3:{
+  color: '#C60000',
+  fontSize: '35px',
   textAlign:' center',
   marginLeft: '3%',
 },
