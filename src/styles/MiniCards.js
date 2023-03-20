@@ -14,12 +14,11 @@ export const ViewMicroCards = styled.View`
 export const TableMicroCards = styled.View`
   display: row;
   flex-direction: row-reverse;
-  grid-template-rows: repeat(2, 50%);
-  width: 100%;
+  width: 90%;
   height: 50px;
   justify-content: space-around;
-  margin-top: 5%;
-  margin-bottom: 20%;
+  margin-top: 7%;
+  margin-bottom: 7%;
 `;
 
 export const ContentMicroCard = styled.View`
@@ -49,7 +48,20 @@ export const ContentMiniCard = styled.View`
   align-items: center;
 `;
 
+export const ContentTable = styled.View`  
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
+  padding-top: 0 ;
+  background-color: #f3f3f3;
+  margin: 5%;
+  height: 200px;
+  border-radius: 20px;
+  box-shadow: 0 5px 5px rgba(170, 170, 170, 0.6);
+  margin-bottom: 100px;
 
+`;
 export const Minicard = styled.View`
   flex-direction: row;
   width: 90%;
@@ -63,3 +75,4 @@ export const Minicard = styled.View`
   padding: 20px;
   margin:2%
 `;
+

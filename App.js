@@ -10,7 +10,7 @@ import { MicroText, Value } from './src/styles/Texts';
 import { ThemeProvider } from 'styled-components';
 import  Theme  from './src/styles/Theme';
 import { ImageCard } from './src/styles/CardImage';
-import { ContentMicroCard, ContentMiniCard, MicroCard, Minicard, TableMicroCards, ViewMicroCards } from './src/styles/MiniCards';
+import { ContentMicroCard, ContentMiniCard, ContentTable, MicroCard, Minicard, TableMicroCards, ViewMicroCards } from './src/styles/MiniCards';
 import { Feather } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -113,51 +113,88 @@ export default function App() {
               <AntDesign name="right" style={{color: Theme.color.main}} />
             </Minicard>
           </ContentMiniCard>
+
+          <ContentTable>
           <TableMicroCards>
-          <ContentMicroCard>
-              <MicroCard>
-                <Feather name="file-text" style={styles.valueicon} />
-              </MicroCard>
-              <MicroText>
-                Contratos
-              </MicroText>
-            </ContentMicroCard>
-            <ContentMicroCard>
-              <MicroCard>
-              <FontAwesome5 name="money-bill-wave" style={styles.valueicon2} />              
-              </MicroCard>
-              <MicroText>
-                Valores
-              </MicroText>
-            </ContentMicroCard>
-            <ContentMicroCard>
-              <MicroCard>
-                <MaterialCommunityIcons name="bank-transfer" style={styles.valueicon3} /> 
-              </MicroCard>
-              <MicroText>
-                Transferir
-              </MicroText>
-            </ContentMicroCard>
-            <ContentMicroCard>
-              <MicroCard>
-                <MaterialIcons name="attach-money" style={styles.valueicon}/>
-              </MicroCard>
-              <MicroText>
-                Solicitar
-              </MicroText>
-            </ContentMicroCard>
-          </TableMicroCards>
+              <ContentMicroCard>
+                <MicroCard>
+                  <Feather name="file-text" style={styles.valueicon} />
+                </MicroCard>
+                <MicroText>
+                  Contratos
+                </MicroText>
+              </ContentMicroCard>
+              <ContentMicroCard>
+                <MicroCard>
+                <FontAwesome5 name="money-bill-wave" style={styles.valueicon2} />              
+                </MicroCard>
+                <MicroText>
+                  Valores
+                </MicroText>
+              </ContentMicroCard>
+              <ContentMicroCard>
+                <MicroCard>
+                  <MaterialCommunityIcons name="bank-transfer" style={styles.valueicon3} /> 
+                </MicroCard>
+                <MicroText>
+                  Transferir
+                </MicroText>
+              </ContentMicroCard>
+            </TableMicroCards>
+            <TableMicroCards>
+              <ContentMicroCard>
+                <MicroCard>
+                  <Feather name="file-text" style={styles.valueicon} />
+                </MicroCard>
+                <MicroText>
+                  Contratos
+                </MicroText>
+              </ContentMicroCard>
+              <ContentMicroCard>
+                <MicroCard>
+                <FontAwesome5 name="money-bill-wave" style={styles.valueicon2} />              
+                </MicroCard>
+                <MicroText>
+                  Valores
+                </MicroText>
+              </ContentMicroCard>
+              <ContentMicroCard>
+                <MicroCard>
+                  <MaterialCommunityIcons name="bank-transfer" style={styles.valueicon3} /> 
+                </MicroCard>
+                <MicroText>
+                  Transferir
+                </MicroText>
+              </ContentMicroCard>
+            </TableMicroCards>
+
+          </ContentTable>
 
 
       </ScrollView>
 
 
         <View style={styles.footer}>
-        <Entypo name="home" style={styles.footericon} />
-
-        <MaterialIcons name="monetization-on" style={styles.gambiicon} />
-
+        <ContentMicroCard>
+            <Entypo name="home" style={styles.footericon} />
+            <MicroText style={{color: Theme.color.light}}>
+              Home
+            </MicroText>
+          </ContentMicroCard>
+          <ContentMicroCard>
+            <MaterialIcons name="monetization-on" style={styles.footericon} />
+            <MicroText style={{color: Theme.color.light}}>
+              Solicitar
+            </MicroText>
+          </ContentMicroCard>
+          <ContentMicroCard>
         <MaterialIcons name="speaker-notes" style={styles.footericon} />
+            <MicroText style={{color: Theme.color.light}}>
+              Notificações
+            </MicroText>
+          </ContentMicroCard>
+
+
         </View>
       </View>
     </ThemeProvider>
@@ -255,6 +292,7 @@ valueicon3:{
     height: '10%', 
     alignItems: 'center',
     justifyContent: 'space-between',
+    padding: '2%',
     },
     supgambiicon: {
       alignItems: 'center',
