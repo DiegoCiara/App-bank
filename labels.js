@@ -1,6 +1,5 @@
 export  const client = {
   name: 'Jose da Silva Santos',
-  value: 5000,
-  budget: 15256,
-
+  value: "5.000,00",
+  budget: "15.256,00",
 } 

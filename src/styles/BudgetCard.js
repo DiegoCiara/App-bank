@@ -4,13 +4,13 @@ import styled from "styled-components/native";
 export const BugetCard = styled.View`
   display: flex;
   flex-direction: column;
-  height: 130px;
+  height: 18%;
   background-color: #ffffff;
   border-radius: 10px;
   padding: 2%;
   margin: 5%;
   justify-content: space-between;
-  box-shadow: 0 5px 8px rgba(0,0,0,0.6);
+  box-shadow: 0 5px 5px rgba(170, 170, 170, 0.6);
  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.6);
  `;
 export const ContentValue = styled.View`

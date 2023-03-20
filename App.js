@@ -10,7 +10,12 @@ import { MicroText, Value } from './src/styles/Texts';
 import { ThemeProvider } from 'styled-components';
 import  Theme  from './src/styles/Theme';
 import { ImageCard } from './src/styles/CardImage';
-import { ContentMicroCard, MicroCard, Minicard, ViewMicroCards } from './src/styles/MiniCards';
+import { ContentMicroCard, ContentMiniCard, MicroCard, Minicard, TableMicroCards, ViewMicroCards } from './src/styles/MiniCards';
+import { Feather } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+
+
 
 export default function App() {
   return (
@@ -31,6 +36,8 @@ export default function App() {
 
 
       <ScrollView style={styles.scrum} showsVerticalScrollIndicator={false}>
+
+        
           <BugetCard>
             <ContentValue>
               <JustTitleValue>
@@ -50,59 +57,96 @@ export default function App() {
                 Saldo a liberar:
               </Text>
               <Text>
-                {client.budget}
+                R$ {client.budget}
               </Text>
             </ContentBudget>
-        </BugetCard>
+          </BugetCard>
 
         <ViewMicroCards>
-        <ContentMicroCard>
-            <MicroCard>
-              <MaterialIcons name="attach-money" style={styles.valueicon}/>
-            </MicroCard>
-            <MicroText>
-              Contratos
-            </MicroText>
-          </ContentMicroCard>
           <ContentMicroCard>
-            <MicroCard>
-              <MaterialIcons name="attach-money" style={styles.valueicon}/>
-            </MicroCard>
-            <MicroText>
-              Valores
-            </MicroText>
-          </ContentMicroCard>
-          <ContentMicroCard>
-            <MicroCard>
-              <MaterialIcons name="attach-money" style={styles.valueicon}/>
-            </MicroCard>
-            <MicroText>
-              Transferir
-            </MicroText>
-          </ContentMicroCard>
-          <ContentMicroCard>
-            <MicroCard>
-              <MaterialIcons name="attach-money" style={styles.valueicon}/>
-            </MicroCard>
-            <MicroText>
-              Contratos
-            </MicroText>
-          </ContentMicroCard>
-        </ViewMicroCards>
+              <MicroCard>
+                <Feather name="file-text" style={styles.valueicon} />
+              </MicroCard>
+              <MicroText>
+                Contratos
+              </MicroText>
+            </ContentMicroCard>
+            <ContentMicroCard>
+              <MicroCard>
+              <FontAwesome5 name="money-bill-wave" style={styles.valueicon2} />              
+              </MicroCard>
+              <MicroText>
+                Valores
+              </MicroText>
+            </ContentMicroCard>
+            <ContentMicroCard>
+              <MicroCard>
+                <MaterialCommunityIcons name="bank-transfer" style={styles.valueicon} /> 
+              </MicroCard>
+              <MicroText>
+                Transferir
+              </MicroText>
+            </ContentMicroCard>
+            <ContentMicroCard>
+              <MicroCard>
+                <MaterialIcons name="attach-money" style={styles.valueicon}/>
+              </MicroCard>
+              <MicroText>
+                Solicitar
+              </MicroText>
+            </ContentMicroCard>
+          </ViewMicroCards>
 
           <ImageCard  source={require('./imagecard.png')}/>
-          <Minicard>
+
+          <ContentMiniCard>
+            <Minicard>
               <Text >
                 Mais produtos
               </Text>
               <AntDesign name="right" style={{color: Theme.color.main}} />
-          </Minicard>
-          <Minicard>
+            </Minicard>
+            <Minicard>
               <Text >
-                Mais produtos
+                Saiba mais
               </Text>
               <AntDesign name="right" style={{color: Theme.color.main}} />
-          </Minicard>
+            </Minicard>
+          </ContentMiniCard>
+          <TableMicroCards>
+          <ContentMicroCard>
+              <MicroCard>
+                <Feather name="file-text" style={styles.valueicon} />
+              </MicroCard>
+              <MicroText>
+                Contratos
+              </MicroText>
+            </ContentMicroCard>
+            <ContentMicroCard>
+              <MicroCard>
+              <FontAwesome5 name="money-bill-wave" style={styles.valueicon2} />              
+              </MicroCard>
+              <MicroText>
+                Valores
+              </MicroText>
+            </ContentMicroCard>
+            <ContentMicroCard>
+              <MicroCard>
+                <MaterialCommunityIcons name="bank-transfer" style={styles.valueicon} /> 
+              </MicroCard>
+              <MicroText>
+                Transferir
+              </MicroText>
+            </ContentMicroCard>
+            <ContentMicroCard>
+              <MicroCard>
+                <MaterialIcons name="attach-money" style={styles.valueicon}/>
+              </MicroCard>
+              <MicroText>
+                Solicitar
+              </MicroText>
+            </ContentMicroCard>
+          </TableMicroCards>
 
 
       </ScrollView>
@@ -110,11 +154,9 @@ export default function App() {
 
         <View style={styles.footer}>
         <Entypo name="home" style={styles.footericon} />
-        <View style={styles.supgambiicon}> 
-          <View style={styles.gambiicon}>
-            <MaterialIcons name="attach-money" style={styles.budgeticon}/>
-            </View>      
-        </View>
+
+        <MaterialIcons name="monetization-on" style={styles.gambiicon} />
+
         <MaterialIcons name="speaker-notes" style={styles.footericon} />
         </View>
       </View>
@@ -123,17 +165,10 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-
-
   scrum: {
     maxWidth: '100%',
     padding: '5%',
   },
-
-
-
-
-
   statusbar:{
     color: '#ffffff',
   },
@@ -177,12 +212,18 @@ const styles = StyleSheet.create({
 
   
 // Budget Card
-  valueicon:{
-    color: '#C60000',
-    fontSize: '30px',
-    textAlign:' center',
-    marginLeft: '3%',
-  },
+valueicon:{
+  color: '#C60000',
+  fontSize: '30px',
+  textAlign:' center',
+  marginLeft: '3%',
+},
+valueicon2:{
+  color: '#C60000',
+  fontSize: '22px',
+  textAlign:' center',
+  marginLeft: '3%',
+},
 
 
 // Mminicards
@@ -205,7 +246,7 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     backgroundColor: '#C60000',
     width: '100%',
-    height: '8%', 
+    height: '10%', 
     alignItems: 'center',
     justifyContent: 'space-between',
     },
@@ -224,16 +265,15 @@ const styles = StyleSheet.create({
     },
   
     gambiicon:{
-      backgroundColor: '#ffff',
-      textAlign:' center',
-      alignItems: 'center',
-      borderRadius: '25%',
-      borderWidth: '1px',
+      marginLeft: '10%',
+      marginRight: '10%',
+      fontSize: '50px',
+      color: '#ffffff',
     },
     footericon: {
       marginLeft: '10%',
       marginRight: '10%',
-      fontSize: '40px',
+      fontSize: '35px',
       color: '#ffffff',
     },
   
