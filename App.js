@@ -14,6 +14,7 @@ import { ContentMicroCard, ContentMiniCard, ContentTable, MicroCard, Minicard, T
 import { Feather } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { icon, icons } from './src/styles/Icons';
 
 
 
@@ -31,7 +32,7 @@ export default function App() {
               {client.name}
             </Text>
           </View>
-          <FontAwesome name="user-circle-o"  style={styles.usericon}/>
+          <FontAwesome name="user-circle-o"  style={icon.normal.red}/>
         </View>
 
 
@@ -42,7 +43,7 @@ export default function App() {
             <ContentValue>
               <JustTitleValue>
                 <TitleValue>
-                <MaterialIcons name="attach-money" style={styles.valueicon}/>
+                <MaterialIcons name="attach-money" style={icon.normal.red.red}/>
                 <Text> Saldo Liberado</Text>
                 </TitleValue>
                 <Value>R$ {client.value}</Value>
@@ -65,7 +66,7 @@ export default function App() {
         <ViewMicroCards>
           <ContentMicroCard>
               <MicroCard>
-                <Feather name="file-text" style={styles.valueicon} />
+                <Feather name="file-text" style={icon.normal.red} />
               </MicroCard>
               <MicroText>
                 Contratos
@@ -73,7 +74,7 @@ export default function App() {
             </ContentMicroCard>
             <ContentMicroCard>
               <MicroCard>
-              <FontAwesome5 name="money-bill-wave" style={styles.valueicon2} />              
+              <FontAwesome5 name="money-bill-wave" style={icon.small.red} />              
               </MicroCard>
               <MicroText>
                 Valores
@@ -81,7 +82,7 @@ export default function App() {
             </ContentMicroCard>
             <ContentMicroCard>
               <MicroCard>
-                <MaterialCommunityIcons name="bank-transfer" style={styles.valueicon3} /> 
+                <MaterialCommunityIcons name="bank-transfer" style={icon.normal.red} /> 
               </MicroCard>
               <MicroText>
                 Transferir
@@ -89,7 +90,7 @@ export default function App() {
             </ContentMicroCard>
             <ContentMicroCard>
               <MicroCard>
-                <MaterialIcons name="attach-money" style={styles.valueicon}/>
+                <MaterialIcons name="attach-money" style={icon.normal.red}/>
               </MicroCard>
               <MicroText>
                 Solicitar
@@ -118,7 +119,7 @@ export default function App() {
           <TableMicroCards>
               <ContentMicroCard>
                 <MicroCard>
-                  <Feather name="file-text" style={styles.valueicon} />
+                  <Feather name="file-text" style={icon.normal.red} />
                 </MicroCard>
                 <MicroText>
                   Contratos
@@ -126,7 +127,7 @@ export default function App() {
               </ContentMicroCard>
               <ContentMicroCard>
                 <MicroCard>
-                <FontAwesome5 name="money-bill-wave" style={styles.valueicon2} />              
+                <FontAwesome5 name="money-bill-wave" style={icon.normal.red} />              
                 </MicroCard>
                 <MicroText>
                   Valores
@@ -134,7 +135,7 @@ export default function App() {
               </ContentMicroCard>
               <ContentMicroCard>
                 <MicroCard>
-                  <MaterialCommunityIcons name="bank-transfer" style={styles.valueicon3} /> 
+                  <MaterialCommunityIcons name="bank-transfer" style={icon.normal.red} /> 
                 </MicroCard>
                 <MicroText>
                   Transferir
@@ -144,7 +145,7 @@ export default function App() {
             <TableMicroCards>
               <ContentMicroCard>
                 <MicroCard>
-                  <Feather name="file-text" style={styles.valueicon} />
+                  <Feather name="file-text" style={icon.normal.red} />
                 </MicroCard>
                 <MicroText>
                   Contratos
@@ -152,7 +153,7 @@ export default function App() {
               </ContentMicroCard>
               <ContentMicroCard>
                 <MicroCard>
-                <FontAwesome5 name="money-bill-wave" style={styles.valueicon2} />              
+                <FontAwesome5 name="money-bill-wave" style={icon.normal.red} />              
                 </MicroCard>
                 <MicroText>
                   Valores
@@ -160,35 +161,31 @@ export default function App() {
               </ContentMicroCard>
               <ContentMicroCard>
                 <MicroCard>
-                  <MaterialCommunityIcons name="bank-transfer" style={styles.valueicon3} /> 
+                  <MaterialCommunityIcons name="bank-transfer" style={icon.normal.red} /> 
                 </MicroCard>
                 <MicroText>
                   Transferir
                 </MicroText>
               </ContentMicroCard>
             </TableMicroCards>
-
           </ContentTable>
-
-
       </ScrollView>
 
-
         <View style={styles.footer}>
-        <ContentMicroCard>
-            <Entypo name="home" style={styles.footericon} />
+        <ContentMicroCard style={{height: Theme.spacing.short}}>
+            <Entypo name="home" style={icon.normal.red} />
             <MicroText style={{color: Theme.color.light}}>
               Home
             </MicroText>
           </ContentMicroCard>
           <ContentMicroCard>
-            <MaterialIcons name="monetization-on" style={styles.footericon} />
+            <MaterialIcons name="monetization-on" style={icon.normal.red} />
             <MicroText style={{color: Theme.color.light}}>
               Solicitar
             </MicroText>
           </ContentMicroCard>
           <ContentMicroCard>
-        <MaterialIcons name="speaker-notes" style={styles.footericon} />
+        <MaterialIcons name="speaker-notes" style={icon.normal.red} />
             <MicroText style={{color: Theme.color.light}}>
               Notificações
             </MicroText>
@@ -246,41 +243,7 @@ const styles = StyleSheet.create({
     color: '#ffffff',
   },
 
-
-  
-// Budget Card
-valueicon:{
-  color: '#C60000',
-  fontSize: '30px',
-  textAlign:' center',
-  marginLeft: '3%',
-},
-valueicon2:{
-  color: '#C60000',
-  fontSize: '22px',
-  textAlign:' center',
-  marginLeft: '3%',
-},
-valueicon3:{
-  color: '#C60000',
-  fontSize: '35px',
-  textAlign:' center',
-  marginLeft: '3%',
-},
-
-
 // Mminicards
-  minicard: {
-    backgroundColor: '#ffffff',
-    padding: '5%',
-    borderRadius: '20px',
-    margin: '5%',
-    marginBottom: '3%',
-    marginTop: '0%',
-    borderWidth: '1px',
-    borderColor: '#C60000',
-    width: '100%',
-  },
 
 // Footer
   footer:{
@@ -289,37 +252,10 @@ valueicon3:{
     color: '#ffffff',
     backgroundColor: '#C60000',
     width: '100%',
-    height: '10%', 
+    height: '8%', 
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding: '2%',
+    padding: 0
     },
-    supgambiicon: {
-      alignItems: 'center',
-      textAlign:' center',
-    },
-    budgeticon:{
-      textAlign:'center',
-      margin: 2,
-      fontSize: 36,
-      color: '#c60000',
-      borderRadius: '24%',
-      padding: 5,
-      borderWidth: '1px',
-    },
-  
-    gambiicon:{
-      marginLeft: '10%',
-      marginRight: '10%',
-      fontSize: '50px',
-      color: '#ffffff',
-    },
-    footericon: {
-      marginLeft: '10%',
-      marginRight: '10%',
-      fontSize: '35px',
-      color: '#ffffff',
-    },
-  
   
 });
